@@ -11,10 +11,9 @@
 body {
   margin: 0;
   font-family: system-ui, -apple-system, sans-serif;
-  background: #f4f4f4;
+  background: #e6db7c;
   color: #222;
 }
-
 
 header {
   text-align: center;
@@ -32,13 +31,45 @@ main {
 .cat-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  /* remove width:100% so max-width controls sizing */
+  /* width: 100%; */
+  max-width: 1100px;
+  min-height: 70vh;
+  padding: 50px;
+  border-radius: 10px; /* add unit */
+  overflow: visible;
+  box-shadow: 0 14px 30px rgba(16,24,40,0.06);
+  background: transparent;
+  color: #462727;
+  margin: 0 auto;
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+.overall-wrapper {
+
   width: 100%;
   max-width: 1100px;
   min-height: 70vh;
-  border-radius: 0;
+  padding: 50px;
+  border-radius: 10;
   overflow: visible;
-  box-shadow: none;
+  box-shadow: 0 14px 30px rgba(16,24,40,0.06);
   background: transparent;
+  color: #462727;
+  
+  
+}
+
+.overall-caption {
+  grid-column: 1 / -1;
+  justify-self: stretch;
+  width: 100%;
+  text-align: center;
+  margin: 0 1rem 1rem;
+  max-width: calc(100% - 4rem);
+  color: #333;
+  font-family: 'Cattie', cursive;
 }
 
 .cat {
@@ -50,7 +81,7 @@ main {
   justify-content: center;
 }
 
-/* Placeholder Background patterns */
+/* Placeholder Background patterns 
 .dusty {
   background-image: url("../svg/dusty-pattern.svg");
 }
@@ -58,9 +89,16 @@ main {
 .lilo {
   background-image: url("../svg/lilo-pattern.svg");
 }
+*/
 
 .cat-wrapper {
   gap: var(--column-gap);
+}
+
+/* make the first .cat span both columns so it's centered under the heading */
+.cat-wrapper > section.cat:first-of-type {
+  grid-column: 1 / -1;
+  justify-self: center;
 }
 
 .content {
@@ -76,6 +114,7 @@ main {
   overflow: hidden;
   box-shadow: 0 14px 30px rgba(16,24,40,0.06);
   border: 1px solid rgba(16,24,40,0.04);
+  border-radius: 16px;
 }
 
 .content h2 {
@@ -169,4 +208,24 @@ main {
   color: #555;
   font-size: 0.95rem;
   text-align: center;
+}
+
+
+@font-face {
+  font-family: 'Cattie';
+  src: url('../fonts/Cattie-Regular.ttf');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+h1 {
+  font-family: 'Cattie';
+  font-size: 125px;
+}
+
+h2 {
+  font-family: 'Cattie';
+  font-size: 75px;
 }
