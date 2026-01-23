@@ -73,32 +73,25 @@ main {
 }
 
 .cat {
-  position: relative;
-  padding-top: 2.5rem;
-  padding-bottom: 0;
   display: flex;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: stretch;
 }
 
-/* Placeholder Background patterns 
-.dusty {
-  background-image: url("../svg/dusty-pattern.svg");
+.content {
+  width: 100%;
 }
 
-.lilo {
-  background-image: url("../svg/lilo-pattern.svg");
+.cat.full-width {
+  grid-column: 1 / -1;
 }
-*/
+
+.full-width .body {
+  justify-content: flex-start;
+}
 
 .cat-wrapper {
   gap: var(--column-gap);
-}
-
-/* make the first .cat span both columns so it's centered under the heading */
-.cat-wrapper > section.cat:first-of-type {
-  grid-column: 1 / -1;
-  justify-self: center;
 }
 
 .content {
@@ -111,7 +104,7 @@ main {
   display: flex;
   flex-direction: column;
   text-align: center;
-  overflow: hidden;
+  overflow: visible;
   box-shadow: 0 14px 30px rgba(16,24,40,0.06);
   border: 1px solid rgba(16,24,40,0.04);
   border-radius: 16px;
@@ -145,7 +138,7 @@ main {
 
 .content .body {
   flex: 1 1 auto;
-  overflow: hidden;
+  overflow: visible;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -177,10 +170,7 @@ main {
 
 .content p {
   margin: 0;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 6;
-  -webkit-box-orient: vertical;
+  overflow: visible;
 }
 
 .content img:not(.cat-header):not(.cat-footer) {
@@ -228,4 +218,32 @@ h1 {
 h2 {
   font-family: 'Cattie';
   font-size: 75px;
+}
+
+/* Make images feel clickable */
+.cat-footer {
+  cursor: zoom-in;
+}
+
+/* Fullscreen overlay */
+.image-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* The expanded image */
+.image-overlay img {
+  max-width: 90%;
+  max-height: 90%;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+}
+
+/* Hidden state */
+.hidden {
+  display: none;
 }

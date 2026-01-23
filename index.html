@@ -10,21 +10,35 @@
 <header>
   <h1>Cat Chat</h1>
   <h2>Updated weekly!</h2>
-  <p class="date">Last update - 12/01/2026 </p>
+  <p class="date">Last update - 23/01/2026 </p>
   <h3>current plan is to update once a week, alongside a website improvement</h3>
 </header>
 
 <main>
   <div class="cat-wrapper">
     <h2 class="overall-caption">Todays update</h2>
-    <section class="cat dusty">
+    <section class="cat dusty full-width">
       <div class="content">
         <div class="body">
           <p>
-            No major updates for the two this week. Still no use of the cat wheel, but the laser pointer is coming soon. Hopefully they use it.......... Otherwise yeah, no improvement this week sorry........ next week will have two 
-            <img class="cat-footer" src="img/dustybite.jpg" alt="Dusty footer" />
+            sorry about the long time between updates! my computer broke and a factory reset wiped everything!! Even though this website is simple, it has a surprising amount of little fiddly things!
+            <br><br><br>
 
-            <p class="cat-caption">no pooping in peace</p>
+            <b>House update!!</b>
+            <br>
+
+            I'm not sure how much anyone knows about the house, but Bria is officially cancer free! she still needs her checkups and stuff but thankfully the prognosis is great.
+            Brian had his 70th birthday, maybe he's about to go! who knows! there was catering vans and a really depressed person smoking in the driveway!
+            <br><br>
+            <b>Cat Update!!</b>
+            <br>
+            they hate the fucking cat wheel, good use of money :)
+            <br><br>
+            <b>website owner update</b>
+            
+            <br>
+            did a ride down the m1 towards pakenham and the bikes rear indicators fell off and rear brakes just stopped working xd!!! turns out maybe the bike was not the best deal! sneaky salesman! oh well it's fine now.
+            
           </p>
         </div>
       </div>
@@ -36,13 +50,13 @@
         <img class="cat-header" src="img/dustyheader.png" alt="Dusty header" />
         <div class="body">
           <p>
-Dusty gets no updates this week. Motherfucker has started recreationally shitting on the floor despite having a clean litterbox
+dustys new hobby is eating his food so fast that he vomits it all over the carpet, very excited for the bond payment :)
           </p>
         </div>
           <div class="footer-wrap">
             <img class="cat-footer" src="img/dusty.jpg" alt="Dusty footer" />
           </div>
-          <p class="cat-caption">fat freak</p>
+          <p class="cat-caption">DIRTY OLD MAN</p>
       </div>
     </section>
 
@@ -51,15 +65,63 @@ Dusty gets no updates this week. Motherfucker has started recreationally shittin
         <img class="cat-header" src="img/liloheader.png" alt="Lilo header" />
         <div class="body">
           <p>
-I never thought it would happen but it looks like finally Lilo is starting to stop shedding after a full week of nonstop brushing. Perfect timing too, because she's figured out how to tuck herself into the blanket to nap
-        </div>
+          no major updates, she's really pissy about he toothbrush so I haven't been able to get behind her rancid mouth just yet, but hopefully soon
+          </div>
         <img class="cat-footer" src="img/lilo.jpg" alt="Lilo footer" />
-        <p class="cat-caption">heard scratching and turned around to this view</p>
+        <p class="cat-caption">executive assistant</p>
       </div>
     </section>
+<section class="cat dusty full-width">
+ 
+  <div class="content">
+    <div class="body">
+       <h2 class="overall-caption">Image Dump</h2>
+      <p>
+    I've added this section to dump all the bonus images that didn't make the cut for the main update. This weeks update is that the images are expandable. I also wanted to add a button to be like 'hey! I've seen this weeks update!, but it's been a bit complicated and I wanted to get this live sooner rather than later
+    <img class="cat-footer" src="img/bonus3.jpg" alt="bonus3" />
+    <p class="cat-caption">shnozzler</p>
+    <img class="cat-footer" src="img/bonus4.jpg" alt="bonus4" />
+    <p class="cat-caption">the spot...</p>
+    <img class="cat-footer" src="img/bonus6.jpg" alt="bonus6" />
+    <p class="cat-caption">enjoying the new bedrot pillow</p>
+    <img class="cat-footer" src="img/bonus7.jpg" alt="bonus7" />
+    <p class="cat-caption">last night</p>
 
+      </p>
+    </div>
   </div>
+    </section>
+  </div>
+  
 </main>
+<div id="imageOverlay" class="image-overlay hidden">
+  <img id="overlayImage" alt="">
+</div>
+<script>
+  const overlay = document.getElementById("imageOverlay");
+  const overlayImg = document.getElementById("overlayImage");
 
+  document.querySelectorAll(".cat-footer").forEach(img => {
+    img.addEventListener("click", () => {
+      overlayImg.src = img.src;
+      overlayImg.alt = img.alt || "";
+      overlay.classList.remove("hidden");
+    });
+  });
+
+  // Click anywhere to close
+  overlay.addEventListener("click", () => {
+    overlay.classList.add("hidden");
+    overlayImg.src = "";
+  });
+
+  // Escape key to close
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      overlay.classList.add("hidden");
+      overlayImg.src = "";
+    }
+  });
+</script>
 </body>
 </html>
