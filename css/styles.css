@@ -220,7 +220,7 @@ h2 {
   font-size: 75px;
 }
 
-/* Make images feel clickable */
+
 .cat-footer {
   cursor: zoom-in;
 }
@@ -236,14 +236,13 @@ h2 {
   z-index: 9999;
 }
 
-/* The expanded image */
+/*expanded image */
 .image-overlay img {
   max-width: 90%;
   max-height: 90%;
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
 }
 
-/* Hidden state */
 .hidden {
   display: none;
 }
