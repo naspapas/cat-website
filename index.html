@@ -1,69 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <title>Cats</title>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
+
 <body>
 
-<header>
-  <h1>Cat Chat</h1>
 
-</header>
 
-<main>
-  <div class="cat-wrapper">
-    <section class="cat dusty full-width">
-      <div class="content">
-        <div class="body">
-          <p>
-            brb for a while
-    <img class="cat-footer" src="img/bonus1.jpg" alt="bonus3" />
 
-    <img class="cat-footer" src="img/bonus2.jpg" alt="bonus4" />
-
-    <img class="cat-footer" src="img/bonus3.jpg" alt="bonus6" />
-
-    <img class="cat-footer" src="img/bonus4.jpg" alt="bonus7" />
-    <p>please be safe, socialize often, drink water, sleep well</p>
-
-          </p>
+  <main>
+    <div class="cat-wrapper">
+      <section class="cat dusty full-width">
+        <div class="content">
+          <h2>Final update for now</h2>
+          <img class="cat-footer" src="img/lilo.png" alt="bonus3" />
+          <p>be kind to yourself</p>
         </div>
-      </div>
-    </section>
+      </section>
 
 
-  
-</main>
-<div id="imageOverlay" class="image-overlay hidden">
-  <img id="overlayImage" alt="">
-</div>
-<script>
-  const overlay = document.getElementById("imageOverlay");
-  const overlayImg = document.getElementById("overlayImage");
+  </main>
+  <div id="imageOverlay" class="image-overlay hidden">
+    <img id="overlayImage" alt="">
+  </div>
+  <script>
+    const overlay = document.getElementById("imageOverlay");
+    const overlayImg = document.getElementById("overlayImage");
 
-  document.querySelectorAll(".cat-footer").forEach(img => {
-    img.addEventListener("click", () => {
-      overlayImg.src = img.src;
-      overlayImg.alt = img.alt || "";
-      overlay.classList.remove("hidden");
+    document.querySelectorAll(".cat-footer").forEach(img => {
+      img.addEventListener("click", () => {
+        overlayImg.src = img.src;
+        overlayImg.alt = img.alt || "";
+        overlay.classList.remove("hidden");
+      });
     });
-  });
 
-  // Click anywhere to close
-  overlay.addEventListener("click", () => {
-    overlay.classList.add("hidden");
-    overlayImg.src = "";
-  });
-
-  // Escape key to close
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
+    // Click anywhere to close
+    overlay.addEventListener("click", () => {
       overlay.classList.add("hidden");
       overlayImg.src = "";
-    }
-  });
-</script>
+    });
+
+    // Escape key to close
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        overlay.classList.add("hidden");
+        overlayImg.src = "";
+      }
+    });
+  </script>
 </body>
+
 </html>
